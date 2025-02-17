@@ -20,7 +20,7 @@ WORKDIR /app
 RUN echo "🧪 Starting Test Stage..."
 RUN echo "Running tests..."
 RUN npm test
-RUN echo "✅ Test Stage completed"
+RUN echo "✅ Test Stage completed yaniv"
 
 # Production Stage
 FROM node:18-slim AS production
