@@ -27,10 +27,10 @@ FROM node:18-slim AS production
 WORKDIR /app
 RUN echo "🚀 Starting Production Stage..."
 
-# Copy only necessary files from builder
-COPY --from=builder /app/package*.json ./
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/server.js ./
+# Copy only necessary files from tester stage (changed from builder)
+COPY --from=tester /app/package*.json ./
+COPY --from=tester /app/node_modules ./node_modules
+COPY --from=tester /app/server.js ./
 RUN echo "📝 Verifying files copied correctly..."
 RUN ls -la
 RUN echo "✅ Production Stage ready"
